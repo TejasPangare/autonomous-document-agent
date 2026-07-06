@@ -13,11 +13,10 @@ class Planner:
     def create_plan(user_request: str):
 
         prompt = f"""
-{PLANNER_PROMPT}
-
-User Request:
-{user_request}
-"""
+                {PLANNER_PROMPT}
+                User Request:
+                {user_request}
+                """
 
         response = invoke(prompt)
         # print("Raw Response:", response)
@@ -49,7 +48,6 @@ User Request:
 
         except Exception as e:
 
-            # Fallback if Gemini returns invalid JSON
             print(f"Error: {e}")
             return {
                 "document_type": "Business Document",

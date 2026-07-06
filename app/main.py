@@ -11,7 +11,6 @@ app = FastAPI()
 def agent(request: AgentRequest):
 
     plan = Planner.create_plan(request.request)
-
     executor = Executor()
 
     result = executor.execute(
